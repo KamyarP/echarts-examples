@@ -389,6 +389,7 @@ export default ${JSON.stringify(exampleList, null, 2)}`;
 
     const browser = await puppeteer.launch({
       headless: false,
+      ignoreDefaultArgs: ['--disable-extensions'],
       args: [
         '--headless',
         '--hide-scrollbars',
