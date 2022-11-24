@@ -204,6 +204,180 @@ function setup(isShared) {
       }
     },
 
+    registerTheme() {
+      const techminersTheme = JSON.parse(`
+      {
+        "version": 1,
+        "themeName": "techminers",
+        "theme": {
+            "seriesCnt": 3,
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "titleColor": "#182631",
+            "subtitleColor": "#8a96a1",
+            "textColorShow": false,
+            "textColor": "#333",
+            "markTextColor": "#eee",
+            "color": [
+                "#3B6AE3",
+                "#677986",
+                "#A150E0",
+                "#A9DC77",
+                "#FFDBAB",
+                "#FF8469",
+                "#73C0DE"
+            ],
+            "borderColor": "#ccc",
+            "borderWidth": 0,
+            "visualMap": {
+                "color": [
+                    "#3b6ae3",
+                    "#7697ec",
+                    "#9db5f1",
+                    "#c4d2f7",
+                    "#d8e1f9",
+                    "#ebf0fc"
+                ]
+            },
+            "legendTextColor": "#182631",
+            "kColor": "#db4c5d",
+            "kColor0": "#47b262",
+            "kBorderColor": "#db4c5d",
+            "kBorderColor0": "#47b262",
+            "kBorderWidth": 1,
+            "lineWidth": 2,
+            "symbolSize": 4,
+            "symbol": "circle",
+            "symbolBorderWidth": 1,
+            "lineSmooth": false,
+            "graphLineWidth": 1,
+            "graphLineColor": "#aaa",
+            "mapLabelColor": "#000",
+            "mapLabelColorE": "rgb(100,0,0)",
+            "mapBorderColor": "#444",
+            "mapBorderColorE": "#444",
+            "mapBorderWidth": 0.5,
+            "mapBorderWidthE": 1,
+            "mapAreaColor": "#eee",
+            "mapAreaColorE": "rgba(255,215,0,0.8)",
+            "axes": [
+                {
+                    "type": "all",
+                    "name": "通用坐标轴",
+                    "axisLineShow": true,
+                    "axisLineColor": "#6E7079",
+                    "axisTickShow": true,
+                    "axisTickColor": "#6E7079",
+                    "axisLabelShow": true,
+                    "axisLabelColor": "#6E7079",
+                    "splitLineShow": true,
+                    "splitLineColor": [
+                        "#E0E6F1"
+                    ],
+                    "splitAreaShow": false,
+                    "splitAreaColor": [
+                        "rgba(250,250,250,0.2)",
+                        "rgba(210,219,238,0.2)"
+                    ]
+                },
+                {
+                    "type": "category",
+                    "name": "类目坐标轴",
+                    "axisLineShow": true,
+                    "axisLineColor": "#6E7079",
+                    "axisTickShow": true,
+                    "axisTickColor": "#6E7079",
+                    "axisLabelShow": true,
+                    "axisLabelColor": "#6E7079",
+                    "splitLineShow": false,
+                    "splitLineColor": [
+                        "#E0E6F1"
+                    ],
+                    "splitAreaShow": false,
+                    "splitAreaColor": [
+                        "rgba(250,250,250,0.2)",
+                        "rgba(210,219,238,0.2)"
+                    ]
+                },
+                {
+                    "type": "value",
+                    "name": "数值坐标轴",
+                    "axisLineShow": false,
+                    "axisLineColor": "#6E7079",
+                    "axisTickShow": false,
+                    "axisTickColor": "#6E7079",
+                    "axisLabelShow": true,
+                    "axisLabelColor": "#6E7079",
+                    "splitLineShow": true,
+                    "splitLineColor": [
+                        "#E0E6F1"
+                    ],
+                    "splitAreaShow": false,
+                    "splitAreaColor": [
+                        "rgba(250,250,250,0.2)",
+                        "rgba(210,219,238,0.2)"
+                    ]
+                },
+                {
+                    "type": "log",
+                    "name": "对数坐标轴",
+                    "axisLineShow": false,
+                    "axisLineColor": "#6E7079",
+                    "axisTickShow": false,
+                    "axisTickColor": "#6E7079",
+                    "axisLabelShow": true,
+                    "axisLabelColor": "#6E7079",
+                    "splitLineShow": true,
+                    "splitLineColor": [
+                        "#E0E6F1"
+                    ],
+                    "splitAreaShow": false,
+                    "splitAreaColor": [
+                        "rgba(250,250,250,0.2)",
+                        "rgba(210,219,238,0.2)"
+                    ]
+                },
+                {
+                    "type": "time",
+                    "name": "时间坐标轴",
+                    "axisLineShow": true,
+                    "axisLineColor": "#6E7079",
+                    "axisTickShow": true,
+                    "axisTickColor": "#6E7079",
+                    "axisLabelShow": true,
+                    "axisLabelColor": "#6E7079",
+                    "splitLineShow": false,
+                    "splitLineColor": [
+                        "#E0E6F1"
+                    ],
+                    "splitAreaShow": false,
+                    "splitAreaColor": [
+                        "rgba(250,250,250,0.2)",
+                        "rgba(210,219,238,0.2)"
+                    ]
+                }
+            ],
+            "axisSeperateSetting": true,
+            "toolboxColor": "#999",
+            "toolboxEmphasisColor": "#666",
+            "tooltipAxisColor": "#ccc",
+            "tooltipAxisWidth": 1,
+            "timelineLineColor": "#DAE1F5",
+            "timelineLineWidth": 2,
+            "timelineItemColor": "#a4b1d7",
+            "timelineItemColorE": "#FFF",
+            "timelineCheckColor": "#316bf3",
+            "timelineCheckBorderColor": "fff",
+            "timelineItemBorderWidth": 1,
+            "timelineControlColor": "#A4B1D7",
+            "timelineControlBorderColor": "#A4B1D7",
+            "timelineControlBorderWidth": 1,
+            "timelineLabelColor": "#A4B1D7"
+        }
+      }`);
+      echarts.registerTheme('techminers', techminersTheme.theme);
+      alert(1);
+    },
+
     screenshot({ filename }) {
       const dataURL = chartInstance.getDataURL({
         excludeComponents: ['toolbox']
@@ -218,9 +392,10 @@ function setup(isShared) {
     run({ store, recreateInstance }) {
       if (recreateInstance || !chartInstance || chartInstance.isDisposed()) {
         this.dispose();
+        this.registerTheme();
         chartInstance = echarts.init(
           document.getElementById('chart-container'),
-          store.darkMode ? 'dark' : '',
+          store.darkMode ? 'dark' : 'techminers',
           {
             renderer: store.renderer,
             useDirtyRect: store.useDirtyRect
